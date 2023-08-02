@@ -7,7 +7,10 @@
       url = "github:mitchellh/zig-overlay";
       inputs.nixpkgs.follows = "pkgs";
     };
-    zls.url = "github:zigtools/zls";
+    zls = {
+      url = "github:zigtools/zls";
+      inputs.zig-overlay.follows = "zig";
+    };
   };
 
   outputs = { self, pkgs, zig, zls }:
