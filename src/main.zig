@@ -4,6 +4,8 @@ const mem = std.mem;
 const E = std.os.linux.E;
 const fuse = @import("fuse31.zig");
 
+// May not be the correct size depending on the target because of the
+// bitfield: https://github.com/ziglang/zig/issues/1499
 const FileInfo = extern struct {
     flags: c_int,
     bitfield: u32,
